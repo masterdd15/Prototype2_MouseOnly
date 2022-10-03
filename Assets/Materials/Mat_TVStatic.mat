@@ -54,12 +54,12 @@ Material:
     m_Ints: []
     m_Floats:
     - Opacity: 1
-    - Smoothness: 0.392
+    - Smoothness: 0.93
     - _EnableExternalAlpha: 0
-    - _circleSize: 2
+    - _circleSize: 1.3
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _cursPosition: {r: 0.5267686, g: 1.1768708, b: 10, a: 0}
+    - _cursPosition: {r: 0.5282427, g: 1.1152416, b: 10, a: 0}
   m_BuildTextureStacks: []
