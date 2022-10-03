@@ -7,6 +7,7 @@ public class FaceDetector : MonoBehaviour
 {
     WebCamTexture _webCamTexture;
     CascadeClassifier cascade;
+    OpenCvSharp.Rect MyFace;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class FaceDetector : MonoBehaviour
         WebCamDevice[] devices = WebCamTexture.devices;
 
         _webCamTexture = new WebCamTexture(devices[0].name);
+        _webCamTexture.requestedFPS = 60;
         _webCamTexture.Play();
         cascade = new CascadeClassifier("Assets/haarcascade_frontalface_default.xml");
     }
@@ -23,10 +25,9 @@ public class FaceDetector : MonoBehaviour
         GetComponent<Renderer>().material.mainTexture = _webCamTexture;
         Mat frame = OpenCvSharp.Unity.TextureToMat(_webCamTexture);
 
-        if (cascade != null)
-        {
-            findNewFace(frame);
-        }
+
+        findNewFace(frame);
+        display(frame);
     }
 
 
@@ -37,6 +38,19 @@ public class FaceDetector : MonoBehaviour
         if(faces.Length >= 1)
         {
             Debug.Log(faces[0].Location);
+            MyFace = faces[0];
         }
+    }
+
+    void display(Mat frame)
+    {
+        if(MyFace !=null)
+        {
+            frame.Rectangle(MyFace, new Scalar(250, 0, 0), 2);
+
+        }
+
+        Texture newTexture = OpenCvSharp.Unity.MatToTexture(frame);
+        GetComponent<Renderer>().material.mainTexture = newTexture;
     }
 }
