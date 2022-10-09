@@ -56,10 +56,10 @@ Material:
     - Opacity: 1
     - Smoothness: 0.93
     - _EnableExternalAlpha: 0
-    - _circleSize: 1.3
+    - _circleSize: 0.5
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _cursPosition: {r: 0.49372384, g: 1.0985131, b: 10, a: 0}
+    - _cursPosition: {r: 0.084935874, g: 1.457265, b: 10, a: 0}
   m_BuildTextureStacks: []
